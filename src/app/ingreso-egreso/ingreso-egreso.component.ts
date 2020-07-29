@@ -3,9 +3,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IngresoEgreso } from './ingreso-egreso.model';
 import { IngresoEgresoService } from './ingreso-egreso.service';
 
+import * as fromIngresoEgreso from './ingres-egreso.reducer';
+
 import Swal from 'sweetalert2';
 import { Store } from '@ngrx/store';
-import { AppState } from '../app.reducer';
+
 import { Subscription } from 'rxjs';
 import { ActivarLoadingAction, DesactivarLoadingAction } from '../shared/ui.actions';
 
@@ -24,7 +26,7 @@ export class IngresoEgresoComponent implements OnInit, OnDestroy {
 
   cargando: boolean;
 
-  constructor(private ingresoEngresoService: IngresoEgresoService, private store: Store<AppState>) { }
+  constructor(private ingresoEngresoService: IngresoEgresoService, private store: Store<fromIngresoEgreso.AppState>) { }
 
   ngOnInit() {
 
